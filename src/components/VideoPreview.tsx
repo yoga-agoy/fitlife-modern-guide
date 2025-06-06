@@ -95,10 +95,10 @@ const VideoPreview = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-green-100 text-green-800 text-lg px-6 py-2">
+          <Badge className="mb-4 bg-emerald-100 text-emerald-800 text-lg px-6 py-2">
             🎉 Welcome! You now have access to our fitness videos
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
             Your Fitness Video Library
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -126,7 +126,7 @@ const VideoPreview = () => {
                       Play Now
                     </Button>
                   </div>
-                  <Badge className="absolute top-4 left-4 bg-green-500 text-white">
+                  <Badge className="absolute top-4 left-4 bg-emerald-500 text-white">
                     FREE
                   </Badge>
                   <div className="absolute top-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">
@@ -153,7 +153,7 @@ const VideoPreview = () => {
                       <p className="font-semibold text-gray-900">{video.instructor}</p>
                       <p className="text-sm text-gray-500">{video.level}</p>
                     </div>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                    <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700">
                       Watch Now
                     </Button>
                   </div>
@@ -225,12 +225,12 @@ const VideoPreview = () => {
 
         {/* Premium Access CTA */}
         <div className="text-center">
-          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-purple-600 to-blue-600 text-white overflow-hidden">
+          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-emerald-500 to-teal-500 text-white overflow-hidden">
             <CardContent className="p-12">
               <h3 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to Unlock Your Full Potential?
               </h3>
-              <p className="text-xl mb-8 text-purple-100">
+              <p className="text-xl mb-8 text-emerald-100">
                 Get unlimited access to our complete library of 500+ professional fitness videos, 
                 personalized meal plans, and 24/7 expert support.
               </p>
@@ -238,27 +238,27 @@ const VideoPreview = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold mb-2">500+</div>
-                  <p className="text-purple-100">Professional Videos</p>
+                  <p className="text-emerald-100">Professional Videos</p>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold mb-2">24/7</div>
-                  <p className="text-purple-100">Expert Support</p>
+                  <p className="text-emerald-100">Expert Support</p>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold mb-2">∞</div>
-                  <p className="text-purple-100">Unlimited Access</p>
+                  <p className="text-emerald-100">Unlimited Access</p>
                 </div>
               </div>
 
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-gray-100 text-xl px-12 py-6"
+                className="bg-white text-emerald-600 hover:bg-gray-100 text-xl px-12 py-6"
                 onClick={handlePaymentAccess}
               >
                 Unlock Premium Access <ArrowRight className="ml-2" />
               </Button>
               
-              <p className="mt-4 text-purple-200 text-sm">
+              <p className="mt-4 text-emerald-200 text-sm">
                 Cancel anytime • 30-day money-back guarantee
               </p>
             </CardContent>

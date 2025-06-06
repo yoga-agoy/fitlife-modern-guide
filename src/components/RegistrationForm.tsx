@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { X, User, Phone, MapPin, Mail } from "lucide-react";
+import { X, User, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface RegistrationFormProps {
@@ -163,21 +163,10 @@ const RegistrationForm = ({ onClose, onSuccess }: RegistrationFormProps) => {
           />
         </div>
 
-        {/* Email Info */}
-        <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <div className="flex items-center gap-2 mb-2">
-            <Mail className="h-4 w-4 text-blue-600" />
-            <p className="text-sm font-semibold text-blue-800">Registration Details</p>
-          </div>
-          <p className="text-sm text-blue-700">
-            Your registration details will be sent to: <strong>naveenlinking@gmail.com</strong>
-          </p>
-        </div>
-
         {/* Submit Button */}
         <Button 
           type="submit" 
-          className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-lg py-6"
+          className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-lg py-6"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Submitting..." : "Register for Fitness Program"}
@@ -189,19 +178,19 @@ const RegistrationForm = ({ onClose, onSuccess }: RegistrationFormProps) => {
         <h3 className="font-semibold text-gray-900 mb-3">What you'll get:</h3>
         <ul className="space-y-2 text-sm text-gray-600">
           <li className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
             Access to 500+ professional fitness videos
           </li>
           <li className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
             Personalized workout plans
           </li>
           <li className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
             Nutrition guidance and meal plans
           </li>
           <li className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
             24/7 expert support and guidance
           </li>
         </ul>
