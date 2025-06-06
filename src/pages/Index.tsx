@@ -55,7 +55,16 @@ const Index = () => {
         </div>
         
         {/* Geometric patterns overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div className="absolute inset-0 opacity-30">
+          <svg width="60" height="60" viewBox="0 0 60 60" className="w-full h-full">
+            <defs>
+              <pattern id="circles" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                <circle cx="30" cy="30" r="4" fill="white" fillOpacity="0.1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#circles)" />
+          </svg>
+        </div>
         
         <div className="relative container mx-auto px-4 py-20 z-10">
           <div className="text-center max-w-4xl mx-auto">
