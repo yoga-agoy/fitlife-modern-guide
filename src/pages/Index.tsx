@@ -38,9 +38,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-lime-50 via-green-50 to-emerald-50 font-inter">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50 font-inter">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-lime-400 via-green-500 to-emerald-600 text-white min-h-screen flex items-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-700 text-white min-h-screen flex items-center">
         {/* Animated floating icons background */}
         <div className="absolute inset-0 overflow-hidden">
           {floatingIcons.map((item, index) => (
@@ -71,17 +71,17 @@ const Index = () => {
             <Badge className="mb-6 bg-white/20 text-white hover:bg-white/30 text-lg px-6 py-2 backdrop-blur-sm">
               Transform Your Life Today ✨
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-lime-100 to-emerald-100 bg-clip-text text-transparent font-outfit leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent font-outfit leading-tight">
               FitLife Modern Guide
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-lime-50 leading-relaxed font-light max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl mb-8 text-blue-50 leading-relaxed font-light max-w-3xl mx-auto">
               Leading a healthy lifestyle in this modern world with professional guidance, 
               avoiding junk foods, and embracing fitness for the new generation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-white text-green-600 hover:bg-lime-50 text-lg px-8 py-6 font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                className="bg-white text-purple-600 hover:bg-blue-50 text-lg px-8 py-6 font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 onClick={() => setShowRegistration(true)}
               >
                 Join Fitness Program <ArrowRight className="ml-2" />
@@ -89,7 +89,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-green-600 text-lg px-8 py-6 font-semibold backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-purple-600 text-lg px-8 py-6 font-semibold backdrop-blur-sm transition-all duration-300"
                 onClick={handleWatchDemo}
               >
                 <Play className="mr-2" /> Watch Demo
@@ -110,7 +110,7 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent font-outfit">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-outfit">
               Choose Your Fitness Journey
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
@@ -126,36 +126,36 @@ const Index = () => {
       <BenefitsSection />
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-green-500 via-emerald-500 to-lime-500 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2 group">
               <div className="flex justify-center transform group-hover:scale-110 transition-transform duration-300">
-                <Users className="h-12 w-12 text-lime-200" />
+                <Users className="h-12 w-12 text-blue-200" />
               </div>
               <h3 className="text-3xl font-bold font-outfit">10,000+</h3>
-              <p className="text-lime-100 font-light">Happy Members</p>
+              <p className="text-blue-100 font-light">Happy Members</p>
             </div>
             <div className="space-y-2 group">
               <div className="flex justify-center transform group-hover:scale-110 transition-transform duration-300">
-                <Award className="h-12 w-12 text-emerald-200" />
+                <Award className="h-12 w-12 text-purple-200" />
               </div>
               <h3 className="text-3xl font-bold font-outfit">95%</h3>
-              <p className="text-emerald-100 font-light">Success Rate</p>
+              <p className="text-purple-100 font-light">Success Rate</p>
             </div>
             <div className="space-y-2 group">
               <div className="flex justify-center transform group-hover:scale-110 transition-transform duration-300">
-                <Heart className="h-12 w-12 text-green-200" />
+                <Heart className="h-12 w-12 text-indigo-200" />
               </div>
               <h3 className="text-3xl font-bold font-outfit">500+</h3>
-              <p className="text-green-100 font-light">Workout Videos</p>
+              <p className="text-indigo-100 font-light">Workout Videos</p>
             </div>
             <div className="space-y-2 group">
               <div className="flex justify-center transform group-hover:scale-110 transition-transform duration-300">
-                <Target className="h-12 w-12 text-lime-200" />
+                <Target className="h-12 w-12 text-blue-200" />
               </div>
               <h3 className="text-3xl font-bold font-outfit">24/7</h3>
-              <p className="text-lime-100 font-light">Expert Support</p>
+              <p className="text-blue-100 font-light">Expert Support</p>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ const Index = () => {
       )}
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-lime-50 via-green-50 to-emerald-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6 text-gray-900 font-outfit">
             Ready to Transform Your Life?
@@ -188,7 +188,7 @@ const Index = () => {
           </p>
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-green-500 via-emerald-500 to-lime-500 hover:from-green-600 hover:via-emerald-600 hover:to-lime-600 text-lg px-8 py-6 font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+            className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 hover:from-blue-600 hover:via-purple-600 hover:to-indigo-600 text-lg px-8 py-6 font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
             onClick={() => setShowRegistration(true)}
           >
             Start Your Journey Today <ArrowRight className="ml-2" />
