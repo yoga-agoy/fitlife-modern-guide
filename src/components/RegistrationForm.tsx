@@ -74,6 +74,16 @@ const RegistrationForm = ({ onClose, onSuccess }: RegistrationFormProps) => {
       body: JSON.stringify(formData),
     });
 
+    if (response.status === 409) {
+    toast({
+      title: "Already Registered",
+      description: "This mobile number is already registered.",
+      variant: "destructive"
+    });
+    setIsSubmitting(false);
+    return;
+  }
+
     if (!response.ok) {
       throw new Error('Failed to submit registration');
     }

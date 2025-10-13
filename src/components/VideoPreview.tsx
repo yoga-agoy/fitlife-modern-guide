@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Play, Lock, Star, Clock, Users, ArrowRight } from "lucide-react";
+import { Play, Lock, Star, Users, ArrowRight, X } from "lucide-react";
+
 
 const VideoPreview = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -19,7 +20,8 @@ const VideoPreview = () => {
       description: "Start your day with gentle movements and mindfulness",
       views: "12K",
       rating: 4.8,
-      isFree: true
+      isFree: true,
+      videoUrl: "https://res.cloudinary.com/dto6xakpg/video/upload/v1760282017/how_to_lead_healthy_life_shorts_yqqquz.mp4"
     },
     {
       id: 2,
@@ -31,7 +33,9 @@ const VideoPreview = () => {
       description: "High-intensity workout to maximize calorie burn",
       views: "25K",
       rating: 4.9,
-      isFree: true
+      isFree: true,
+      videoUrl: "https://res.cloudinary.com/dto6xakpg/video/upload/v1760282017/how_to_lead_healthy_life_shorts_yqqquz.mp4"
+
     },
     {
       id: 3,
@@ -43,53 +47,59 @@ const VideoPreview = () => {
       description: "Learn the science of healthy eating for modern life",
       views: "18K",
       rating: 4.7,
-      isFree: true
+      isFree: true,
+      videoUrl: "https://res.cloudinary.com/dto6xakpg/video/upload/v1760282017/how_to_lead_healthy_life_shorts_yqqquz.mp4"
     }
   ];
 
   const premiumVideos = [
-    {
-      id: 4,
-      title: "Advanced Strength Training",
-      duration: "60 mins",
-      level: "Advanced",
-      instructor: "Mike Johnson",
-      thumbnail: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=300&fit=crop",
-      description: "Professional muscle-building techniques",
-      views: "35K",
-      rating: 4.9,
-      isFree: false
-    },
-    {
-      id: 5,
-      title: "Mindful Meditation Series",
-      duration: "30 mins",
-      level: "All Levels",
-      instructor: "Lisa Chen",
-      thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
-      description: "Reduce stress and improve mental clarity",
-      views: "22K",
-      rating: 4.8,
-      isFree: false
-    },
-    {
-      id: 6,
-      title: "Dance Fitness Fusion",
-      duration: "45 mins",
-      level: "Intermediate",
-      instructor: "Carlos Rodriguez",
-      thumbnail: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop",
-      description: "Fun cardio workout with dance elements",
-      views: "28K",
-      rating: 4.6,
-      isFree: false
-    }
+    // {
+    //   id: 4,
+    //   title: "Advanced Strength Training",
+    //   duration: "60 mins",
+    //   level: "Advanced",
+    //   instructor: "Mike Johnson",
+    //   thumbnail: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=300&fit=crop",
+    //   description: "Professional muscle-building techniques",
+    //   views: "35K",
+    //   rating: 4.9,
+    //   isFree: false
+    // },
+    // {
+    //   id: 5,
+    //   title: "Mindful Meditation Series",
+    //   duration: "30 mins",
+    //   level: "All Levels",
+    //   instructor: "Lisa Chen",
+    //   thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    //   description: "Reduce stress and improve mental clarity",
+    //   views: "22K",
+    //   rating: 4.8,
+    //   isFree: false
+    // },
+    // {
+    //   id: 6,
+    //   title: "Dance Fitness Fusion",
+    //   duration: "45 mins",
+    //   level: "Intermediate",
+    //   instructor: "Carlos Rodriguez",
+    //   thumbnail: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop",
+    //   description: "Fun cardio workout with dance elements",
+    //   views: "28K",
+    //   rating: 4.6,
+    //   isFree: false
+    // }
   ];
 
   const handlePaymentAccess = () => {
     // This would integrate with payment system
     alert("Payment integration will be implemented here to unlock premium videos!");
   };
+
+  const handleVideoPlay = (video) => {
+    setSelectedVideo(video);
+  };
+
 
   return (
     <section className="py-20 bg-white">
@@ -121,7 +131,8 @@ const VideoPreview = () => {
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button size="lg" className="bg-white text-black hover:bg-gray-100">
+                    <Button size="lg" className="bg-white text-black hover:bg-gray-100"
+                     onClick={() => handleVideoPlay(video)}>
                       <Play className="mr-2 h-5 w-5" />
                       Play Now
                     </Button>
@@ -153,7 +164,8 @@ const VideoPreview = () => {
                       <p className="font-semibold text-gray-900">{video.instructor}</p>
                       <p className="text-sm text-gray-500">{video.level}</p>
                     </div>
-                    <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700">
+                    <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700"
+                     onClick={() => handleVideoPlay(video)}>
                       Watch Now
                     </Button>
                   </div>
@@ -164,7 +176,7 @@ const VideoPreview = () => {
         </div>
 
         {/* Premium Videos */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold mb-4 text-gray-900">
               Premium Video Collection
@@ -221,10 +233,10 @@ const VideoPreview = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Premium Access CTA */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <Card className="max-w-4xl mx-auto bg-gradient-to-r from-emerald-500 to-teal-500 text-white overflow-hidden">
             <CardContent className="p-12">
               <h3 className="text-3xl md:text-4xl font-bold mb-6">
@@ -263,8 +275,31 @@ const VideoPreview = () => {
               </p>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
       </div>
+
+            {/* 🎬 Video Modal */}
+      {selectedVideo && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+          <div className="relative w-full max-w-3xl bg-black rounded-lg overflow-hidden">
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute top-2 right-2 text-white hover:text-red-400"
+            >
+              <X size={28} />
+            </button>
+            <iframe
+              src={selectedVideo.videoUrl}
+              width="100%"
+              height="500"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
+
+
     </section>
   );
 };
