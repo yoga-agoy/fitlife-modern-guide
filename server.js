@@ -6,7 +6,7 @@ const app = express();
 
 // Enable CORS for frontend (port 8080)
 app.use(cors({
-  origin: 'http://localhost:8080',
+  origin: ['http://localhost:8080','https://makefitlife.netlify.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 }));
