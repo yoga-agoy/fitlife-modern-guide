@@ -4,16 +4,41 @@ import cors from 'cors';
 
 const app = express();
 
-// ✅ Allow Netlify & Localhost
+// ✅ Allowed frontend origins
+const allowedOrigins = [
+  'https://makefitlife.netlify.app',
+  'http://localhost:8080',
+  'http://localhost:5173'
+];
+
+// ✅ CORS setup with dynamic origin
 app.use(cors({
-  origin: ['https://makefitlife.netlify.app', 'http://localhost:8080', 'http://localhost:5173'],
+  origin: function (origin, callback) {
+    // Allow requests with no origin (Postman, server-to-server)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
 
-// ✅ Handle browser preflight requests explicitly
-app.options('*', cors());
+// ✅ Handle preflight requests explicitly
+app.options('*', cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) return callback(null, true);
+    callback(new Error('Not allowed by CORS'));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
 app.use(express.json());
 
