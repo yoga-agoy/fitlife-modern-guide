@@ -4,15 +4,20 @@ import cors from 'cors';
 
 const app = express();
 
+// ✅ Allow Netlify & Localhost
 app.use(cors({
-  origin: ['http://localhost:8080', 'http://localhost:5173', 'https://makefitlife.netlify.app'],
+  origin: ['https://makefitlife.netlify.app', 'http://localhost:8080', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
 }));
+
+// ✅ Handle browser preflight requests explicitly
+app.options('*', cors());
 
 app.use(express.json());
 
-// MySQL connection
+// ✅ MySQL connection (Clever Cloud)
 const db = mysql.createConnection({
   host: 'bqbacrrula4bc7yb4qbq-mysql.services.clever-cloud.com',
   user: 'ub1fndzhcvmueesi',
@@ -30,6 +35,7 @@ db.connect((err) => {
   console.log('✅ Connected to Clever Cloud MySQL!');
 });
 
+// ✅ Registration endpoint
 app.post('/api/register', (req, res) => {
   const { name, mobile, address } = req.body;
 
@@ -55,7 +61,9 @@ app.post('/api/register', (req, res) => {
   });
 });
 
+// ✅ Root test route
 app.get('/', (req, res) => res.send('Backend is running ✅'));
 
+// ✅ Server
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
