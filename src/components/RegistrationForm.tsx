@@ -68,7 +68,13 @@ const RegistrationForm = ({ onClose, onSuccess }: RegistrationFormProps) => {
       await new Promise(resolve => setTimeout(resolve, 2000));
 
       // Send registration details to backend
-    const response = await fetch('http://localhost:3001/api/register', {
+    // const response = await fetch('http://localhost:3001/api/register', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(formData),
+    // });
+
+    const response = await fetch('https://registration-backend.onrender.com/api/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
